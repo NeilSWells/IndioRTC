@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map IndioRtc
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+IndioRtc		KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+getTime			KEYWORD2
+getTimeclockTime	KEYWORD2
+newSecond		KEYWORD2
+newMinute		KEYWORD2
+setSecond		KEYWORD2
+setMinute		KEYWORD2	
+setHour			KEYWORD2
+setDOW			KEYWORD2
+setDate			KEYWORD2
+
