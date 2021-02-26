@@ -58,9 +58,9 @@ void loop()
 ## Notes
 
 ### setDate()
-`setDate(28,2,21);` Sets the date in the RTC and returns true as 28th February 2021 is a valid date.
+`rtc.setDate(28,2,21);` Sets the date in the RTC and returns true as 28th February 2021 is a valid date.
 
-`setDate(29,2,21);` Returns false as 2021 is not a leap year. The RTC is unchanged.
+`rtc.setDate(29,2,21);` Returns false as 2021 is not a leap year. The RTC is unchanged.
 
 ### newSecond() and newMinute()
 Each function does the minimum necessary to determine if the second or minute has changed.
