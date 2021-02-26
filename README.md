@@ -64,6 +64,7 @@ void loop()
 ### newSecond() and newMinute()
 Each function does the minimum necessary to determine if the second or minute has changed.
 Returns true if the second or minute has changed **since the function was last called.**
+
 Use with care, each function should only be called in one place in your code to avoid unexpected results.
 
 ### getTimeclockTime()
