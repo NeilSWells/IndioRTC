@@ -70,7 +70,7 @@ Use with care, each function should only be called in one place in your code to 
 Returns an **int** that represents the time for easier comparisons.
 13:15 is returned as 1315
 ```
-int t = getTimeclockTime();
+int t = rtc.getTimeclockTime();
 if (t > 1130 && t < 1345) SerialUSB.print("Getting hungry");
 ```
 
