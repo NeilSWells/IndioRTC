@@ -86,6 +86,7 @@ The Day of the Week function on the MCP7940 is just a counter that increases at 
 It has no relationship to the date.
 
 ### getMac()
+Returns the Ethernet Mac Address that is stored in the RTCs EEPROM on the Industruino.
 ```
 byte mac[6];
 rtc.getMac(mac);
