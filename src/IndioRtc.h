@@ -8,7 +8,8 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#define INDIO_RTC_ID 0x6F //BB1101111
+#define INDIO_RTC_ID 0x6F
+#define INDIO_RTC_EEPROM 0x57
 
 struct now_t
 {
@@ -25,7 +26,7 @@ class IndioRtc
 {
     public:
         void begin();
-        void getTime (now_t *n);
+        void getTime (now_t * n);
         int  getTimeclockTime();
         bool newSecond();
         bool newMinute();
@@ -34,6 +35,7 @@ class IndioRtc
         void setHour(byte h);
         void setDOW(byte d);
         bool setDate(byte d, byte m, byte y);
+        void getMac(byte * m);
 
     private:
         byte readSingle(byte addr);
