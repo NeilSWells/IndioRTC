@@ -2,12 +2,14 @@
 ## _Real Time Clock Library for the Industruino_
 
 Library to access the MCP7940 clock on the Industruino D21G.
+
 The library assumes that there is a CR1220 backup battery for the RTC.
 
 ## Features
 - `setDate(d,m,y)` changes the values in the RTC if the date is valid and returns false if not valid
 - `getTimeclockTime()` returns the time as a single **int** for easy comparisons
 - `newSecond()` does the minimum necessary to see if the second has changed. Useful for updating a clock display.
+- `getMac(byte[6])` returns the Ethernet Mac Address that is stored in the RTCs EEPROM
 
 ## Basic code
 ```sh
@@ -42,6 +44,7 @@ void loop()
     int = getTimeclockTime()
     bool = newSecond()
     bool = newMinute()
+    getMac(byte[6])
 
 ## Data Type
     now_t
@@ -64,6 +67,7 @@ void loop()
 
 ### newSecond() and newMinute()
 Each function does the minimum necessary to determine if the second or minute has changed.
+
 Returns true if the second or minute has changed **since the function was last called.**
 
 Use with care, each function should only be called in one place in your code to avoid unexpected results.
@@ -78,7 +82,15 @@ if (t > 1130 && t < 1345) SerialUSB.print("Getting hungry");
 
 ### setDOW()
 The Day of the Week function on the MCP7940 is just a counter that increases at midnight and rolls over after 7
+
 It has no relationship to the date.
+
+### getMac()
+```
+byte mac[6];
+rtc.getMac(mac);
+Ethernet.begin(mac); //Using DHCP
+```
 
 ## Contact
 https://github.com/NeilSWells
