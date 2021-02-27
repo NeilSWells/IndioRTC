@@ -21,7 +21,7 @@ void IndioRtc::begin()
 }
 
 
-void IndioRtc::getTime (now_t *n)
+void IndioRtc::getTime (now_t * n)
 {
     Wire.beginTransmission(INDIO_RTC_ID);
     Wire.write(0);
@@ -127,6 +127,23 @@ bool IndioRtc::setDate(byte d, byte m, byte y)
         writeSingle(5, DecToBcd (m));
         writeSingle(4, DecToBcd (d));
     }
+}
+
+
+void IndioRtc::getMac (byte * m)
+{
+    Wire.beginTransmission(INDIO_RTC_EEPROM);
+    Wire.write(0xf0);
+    Wire.endTransmission();
+    Wire.requestFrom(INDIO_RTC_EEPROM, 8);
+    m[0] = Wire.read();
+    m[1] = Wire.read();
+    m[2] = Wire.read();
+    Wire.read();
+    Wire.read();
+    m[3] = Wire.read();
+    m[4] = Wire.read();
+    m[5] = Wire.read();
 }
 
 
