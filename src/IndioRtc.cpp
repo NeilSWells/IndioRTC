@@ -126,6 +126,7 @@ bool IndioRtc::setDate(byte d, byte m, byte y)
         writeSingle(6, DecToBcd (y));
         writeSingle(5, DecToBcd (m));
         writeSingle(4, DecToBcd (d));
+        return true;
     }
 }
 
