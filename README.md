@@ -93,6 +93,9 @@ rtc.getMac(mac);
 Ethernet.begin(mac); //Using DHCP
 ```
 
+## Bugs
+3/7/21 setDate() not returning True when successful - Fixed.
+
 ## Contact
 https://github.com/NeilSWells
 
